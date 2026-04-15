@@ -1,0 +1,31 @@
+{
+  "rows_before": 5000,
+  "rows_after": 5000,
+  "duplicates_removed": 0,
+  "dropped_columns": [],
+  "filled_numeric_columns": [
+    "items_count",
+    "price_sum",
+    "freight_value_sum",
+    "payments_count",
+    "payment_value_sum",
+    "payment_installments_max",
+    "same_state_flag",
+    "purchase_month",
+    "purchase_dayofweek",
+    "purchase_hour",
+    "is_weekend",
+    "delivery_time_days",
+    "is_long_delivery"
+  ],
+  "filled_categorical_columns": [
+    "order_id",
+    "customer_id",
+    "order_status",
+    "customer_state",
+    "seller_state",
+    "product_category_name_english",
+    "payment_type_main"
+  ],
+  "remaining_missing_total": 0
+}

@@ -1,0 +1,28 @@
+{
+  "target_column": "is_long_delivery",
+  "delivery_time_q75_days": 15.720326967592593,
+  "rows": 96476,
+  "columns": [
+    "order_id",
+    "customer_id",
+    "order_status",
+    "order_purchase_timestamp",
+    "customer_state",
+    "seller_state",
+    "product_category_name_english",
+    "items_count",
+    "price_sum",
+    "freight_value_sum",
+    "payments_count",
+    "payment_value_sum",
+    "payment_type_main",
+    "payment_installments_max",
+    "same_state_flag",
+    "purchase_month",
+    "purchase_dayofweek",
+    "purchase_hour",
+    "is_weekend",
+    "delivery_time_days",
+    "is_long_delivery"
+  ]
+}
