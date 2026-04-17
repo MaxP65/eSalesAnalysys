@@ -1,0 +1,65 @@
+project:
+  name: esales_analysis
+  random_state: 42
+
+paths:
+  raw_data_dir: data/raw
+  processed_data_dir: data/processed
+  raw_storage_dir: artifacts/raw_storage
+  cleaned_storage_dir: artifacts/cleaned_storage
+  batch_metadata_dir: artifacts/batch_metadata
+  models_dir: artifacts/models
+  history_dir: artifacts/history
+  reports_dir: artifacts/reports
+  logs_dir: artifacts/logs
+
+data:
+  prepared_dataset_path: data/processed/olist_ml_dataset.csv
+  accumulated_dataset_path: data/processed/accumulated_training_data.csv
+  time_column: order_purchase_timestamp
+  target_column: is_long_delivery
+  batch_size: 5000
+  required_columns:
+    - order_id
+    - order_purchase_timestamp
+    - customer_state
+    - seller_state
+    - price_sum
+    - freight_value_sum
+    - items_count
+    - is_long_delivery
+
+quality:
+  max_missing_ratio: 0.35
+  max_duplicate_ratio: 0.05
+  drop_columns_missing_ratio: 0.60
+  categorical_fill_value: unknown
+  allowed_target_values: [0, 1]
+
+model:
+  primary_metric: f1
+  candidates:
+    decision_tree:
+      param_grid:
+        max_depth: [6, 8, 12]
+        min_samples_split: [2, 10]
+        min_samples_leaf: [5, 10]
+        class_weight: [null, balanced]
+    logistic_regression:
+      param_grid:
+        C: [0.5, 1.0, 2.0]
+        class_weight: [null, balanced]
+        max_iter: [1000]
+        solver: [liblinear]
+
+validation:
+  n_splits: 4
+  test_size_ratio: 0.2
+
+eda:
+  enabled: true
+  top_categories_limit: 15
+
+logging:
+  level: INFO
+  file_name: pipeline.log

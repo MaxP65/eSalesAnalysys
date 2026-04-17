@@ -1,0 +1,14 @@
+{"timestamp": "2026-04-17T22:08:20", "stage": "validation", "duration_seconds": 35.31355181299932, "batch_id": "batch_0004", "best_f1": 0.4519752518405991}
+{"timestamp": "2026-04-17T22:08:21", "stage": "training", "duration_seconds": 0.20348534799995832, "batch_id": "batch_0004", "rows": 10000, "feature_count": 127}
+{"timestamp": "2026-04-17T22:08:21", "stage": "update", "duration_seconds": 37.00539879200005, "batch_id": "batch_0004", "rows_after_cleaning": 5000}
+{"timestamp": "2026-04-17T22:08:39", "stage": "inference", "duration_seconds": 0.2544047519995729, "rows": 5000, "output_path": "artifacts/reports/predictions/batch_0004_cleaned_with_predictions.csv"}
+{"timestamp": "2026-04-17T22:21:09", "stage": "validation", "duration_seconds": 15.658335182999508, "batch_id": "batch_0005", "best_f1": 0.5026049498239554, "best_model_type": "logistic_regression"}
+{"timestamp": "2026-04-17T22:21:09", "stage": "training", "duration_seconds": 0.33487737299947185, "batch_id": "batch_0005", "rows": 15000, "feature_count": 132}
+{"timestamp": "2026-04-17T22:21:09", "stage": "update", "duration_seconds": 17.672856645999673, "batch_id": "batch_0005", "rows_after_cleaning": 5000}
+{"timestamp": "2026-04-17T22:23:27", "stage": "validation", "duration_seconds": 20.405842514999676, "batch_id": "batch_0006", "best_f1": 0.5075480358691817, "best_model_type": "logistic_regression"}
+{"timestamp": "2026-04-17T22:23:27", "stage": "training", "duration_seconds": 0.3603977010006929, "batch_id": "batch_0006", "rows": 20000, "feature_count": 132}
+{"timestamp": "2026-04-17T22:23:27", "stage": "update", "duration_seconds": 22.543508370999916, "batch_id": "batch_0006", "rows_after_cleaning": 5000}
+{"timestamp": "2026-04-17T22:34:48", "stage": "validation", "duration_seconds": 29.425370058000226, "batch_id": "batch_0007", "best_f1": 0.5151836855135256, "best_model_type": "logistic_regression"}
+{"timestamp": "2026-04-17T22:34:49", "stage": "training", "duration_seconds": 0.6058832369999436, "batch_id": "batch_0007", "rows": 25000, "feature_count": 133}
+{"timestamp": "2026-04-17T22:34:49", "stage": "update", "duration_seconds": 32.21079032899979, "batch_id": "batch_0007", "rows_after_cleaning": 5000}
+{"timestamp": "2026-04-17T22:35:16", "stage": "inference", "duration_seconds": 0.2372065190002104, "rows": 5000, "output_path": "artifacts/reports/predictions/inference_input_batch_0007_with_predictions.csv"}

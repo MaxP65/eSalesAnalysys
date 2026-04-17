@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-04-17T22:34:49",
+  "batch_id": "batch_0007",
+  "target_column": "is_long_delivery",
+  "rows": 25000,
+  "feature_count_after_encoding": 133,
+  "model_type": "logistic_regression",
+  "model_params": {
+    "C": 1.0,
+    "class_weight": "balanced",
+    "max_iter": 1000,
+    "solver": "liblinear"
+  },
+  "validation_metrics": {
+    "accuracy": 0.7136,
+    "precision": 0.4088972073340711,
+    "recall": 0.7093415133568008,
+    "f1": 0.5151836855135256
+  },
+  "training_metrics": {
+    "accuracy": 0.7242,
+    "precision": 0.4159844894442051,
+    "recall": 0.7238987816307404,
+    "f1": 0.5283535125521581
+  },
+  "class_distribution": {
+    "0": 0.7866,
+    "1": 0.2134
+  },
+  "model_path": "artifacts/models/model_v004.joblib",
+  "preprocessor_path": "artifacts/models/preprocessor_v004.joblib",
+  "version": "v004",
+  "dropped_feature_columns": [
+    "order_id",
+    "customer_id",
+    "order_status",
+    "order_purchase_timestamp",
+    "delivery_time_days"
+  ],
+  "top_feature_importance": [
+    {
+      "feature_name": "cat__customer_state_SP",
+      "importance": -1.7283888493144832,
+      "abs_importance": 1.7283888493144832
+    },
+    {
+      "feature_name": "cat__product_category_name_english_office_furniture",
+      "importance": 1.6598572126231244,
+      "abs_importance": 1.6598572126231244
+    },
+    {
+      "feature_name": "cat__customer_state_MG",
+      "importance": -1.5664124525479708,
+      "abs_importance": 1.5664124525479708
+    },
+    {
+      "feature_name": "cat__product_category_name_english_fashion_shoes",
+      "importance": 1.5598090476180926,
+      "abs_importance": 1.5598090476180926
+    },
+    {
+      "feature_name": "cat__customer_state_PR",
+      "importance": -1.5223582446909574,
+      "abs_importance": 1.5223582446909574
+    },
+    {
+      "feature_name": "cat__customer_state_AP",
+      "importance": 1.4714606337981326,
+      "abs_importance": 1.4714606337981326
+    },
+    {
+      "feature_name": "cat__customer_state_AL",
+      "importance": 1.356981789628933,
+      "abs_importance": 1.356981789628933
+    },
+    {
+      "feature_name": "cat__customer_state_PA",
+      "importance": 1.1591964401408092,
+      "abs_importance": 1.1591964401408092
+    },
+    {
+      "feature_name": "cat__customer_state_AM",
+      "importance": 1.089521050847636,
+      "abs_importance": 1.089521050847636
+    },
+    {
+      "feature_name": "cat__product_category_name_english_cds_dvds_musicals",
+      "importance": -1.0470928291752435,
+      "abs_importance": 1.0470928291752435
+    }
+  ]
+}
