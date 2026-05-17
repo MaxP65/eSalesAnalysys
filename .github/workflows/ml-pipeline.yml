@@ -87,7 +87,7 @@ jobs:
           mkdir -p artifacts/ci_bundles/logs
           mkdir -p artifacts/ci_bundles/model_bundle
           mkdir -p artifacts/ci_bundles/data_collector_state
-          mkdir -p artifacts/ci_bundles/monitoring_dashboard
+          mkdir -p artifacts/ci_bundles/monitoring_dashboard_ready
 
           cp artifacts/logs/pipeline.log artifacts/ci_bundles/logs/ 2>/dev/null || true
 
@@ -133,7 +133,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: monitoring-dashboard
-          # TODO: fix before final submission: should point to artifacts/ci_bundles/monitoring_dashboard
           path: artifacts/ci_bundles/monitoring_dashboard_ready
           if-no-files-found: error
 

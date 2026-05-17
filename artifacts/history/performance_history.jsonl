@@ -12,3 +12,6 @@
 {"timestamp": "2026-04-17T22:34:49", "stage": "training", "duration_seconds": 0.6058832369999436, "batch_id": "batch_0007", "rows": 25000, "feature_count": 133}
 {"timestamp": "2026-04-17T22:34:49", "stage": "update", "duration_seconds": 32.21079032899979, "batch_id": "batch_0007", "rows_after_cleaning": 5000}
 {"timestamp": "2026-04-17T22:35:16", "stage": "inference", "duration_seconds": 0.2372065190002104, "rows": 5000, "output_path": "artifacts/reports/predictions/inference_input_batch_0007_with_predictions.csv"}
+{"timestamp": "2026-05-17T20:00:48", "stage": "validation", "duration_seconds": 30.883552719999898, "batch_id": "batch_0008", "best_f1": 0.5421728912649386, "best_model_type": "logistic_regression"}
+{"timestamp": "2026-05-17T20:00:49", "stage": "training", "duration_seconds": 0.5667765600001076, "batch_id": "batch_0008", "rows": 30000, "feature_count": 134}
+{"timestamp": "2026-05-17T20:00:49", "stage": "update", "duration_seconds": 33.58909284600031, "batch_id": "batch_0008", "rows_after_cleaning": 5000}
