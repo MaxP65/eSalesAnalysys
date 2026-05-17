@@ -59,7 +59,3 @@ class MLArtifactSmokeTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-
-def intentional_first_run_failure(:
-    pass
