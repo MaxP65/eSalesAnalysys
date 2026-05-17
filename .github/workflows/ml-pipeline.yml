@@ -87,7 +87,7 @@ jobs:
           mkdir -p artifacts/ci_bundles/logs
           mkdir -p artifacts/ci_bundles/model_bundle
           mkdir -p artifacts/ci_bundles/data_collector_state
-          mkdir -p artifacts/ci_bundles/monitoring_dashboard_ready
+          mkdir -p artifacts/ci_bundles/monitoring_dashboard
 
           cp artifacts/logs/pipeline.log artifacts/ci_bundles/logs/ 2>/dev/null || true
 
@@ -133,7 +133,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: monitoring-dashboard
-          path: artifacts/ci_bundles/monitoring_dashboard_ready
+          path: artifacts/ci_bundles/monitoring_dashboard
           if-no-files-found: error
 
       - name: Save current pipeline state
