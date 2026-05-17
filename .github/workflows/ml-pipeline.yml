@@ -81,6 +81,62 @@ jobs:
       - name: Run ML smoke tests
         run: python -m unittest discover -s tests
 
+      - name: Prepare artifact bundles
+        if: always()
+        run: |
+          mkdir -p artifacts/ci_bundles/logs
+          mkdir -p artifacts/ci_bundles/model_bundle
+          mkdir -p artifacts/ci_bundles/data_collector_state
+          mkdir -p artifacts/ci_bundles/monitoring_dashboard
+
+          cp artifacts/logs/pipeline.log artifacts/ci_bundles/logs/ 2>/dev/null || true
+
+          cp artifacts/models/model_latest.joblib artifacts/ci_bundles/model_bundle/ 2>/dev/null || true
+          cp artifacts/models/preprocessor_latest.joblib artifacts/ci_bundles/model_bundle/ 2>/dev/null || true
+          cp artifacts/models/model_registry.json artifacts/ci_bundles/model_bundle/ 2>/dev/null || true
+          cp artifacts/models/training_metadata.json artifacts/ci_bundles/model_bundle/ 2>/dev/null || true
+
+          cp artifacts/history/stream_state.json artifacts/ci_bundles/data_collector_state/ 2>/dev/null || true
+          cp artifacts/history/stream_history.jsonl artifacts/ci_bundles/data_collector_state/ 2>/dev/null || true
+          cp data/processed/accumulated_training_data.csv artifacts/ci_bundles/data_collector_state/ 2>/dev/null || true
+
+          cp artifacts/reports/summary/latest_summary.md artifacts/ci_bundles/monitoring_dashboard/ 2>/dev/null || true
+          cp artifacts/history/training_history.jsonl artifacts/ci_bundles/monitoring_dashboard/ 2>/dev/null || true
+          cp artifacts/history/validation_history.jsonl artifacts/ci_bundles/monitoring_dashboard/ 2>/dev/null || true
+          cp artifacts/history/data_quality_history.jsonl artifacts/ci_bundles/monitoring_dashboard/ 2>/dev/null || true
+          cp artifacts/history/drift_history.jsonl artifacts/ci_bundles/monitoring_dashboard/ 2>/dev/null || true
+          cp artifacts/history/model_drift_history.jsonl artifacts/ci_bundles/monitoring_dashboard/ 2>/dev/null || true
+
+      - name: Upload training logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: training-logs
+          path: artifacts/ci_bundles/logs
+          if-no-files-found: warn
+
+      - name: Upload runnable model bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: runnable-model-bundle
+          path: artifacts/ci_bundles/model_bundle
+          if-no-files-found: error
+
+      - name: Upload data collector state
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-collector-state
+          path: artifacts/ci_bundles/data_collector_state
+          if-no-files-found: error
+
+      - name: Upload monitoring dashboard
+        uses: actions/upload-artifact@v4
+        with:
+          name: monitoring-dashboard
+          # TODO: fix before final submission: should point to artifacts/ci_bundles/monitoring_dashboard
+          path: artifacts/ci_bundles/monitoring_dashboard_ready
+          if-no-files-found: error
+
       - name: Save current pipeline state
         run: |
           mkdir -p .ci-state/artifacts
