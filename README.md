@@ -25,3 +25,25 @@ python3 run.py -mode update
 python3 run.py -mode inference -file ./path/to/file.csv
 python3 run.py -mode summary
 ```
+
+## CI/CD
+
+Запускается при:
+- `push`/`pull_request` в `main`;
+- ежедневном `cron`;
+- ручном запуске через `workflow_dispatch`.
+
+Что делает:
+- запускает `python run.py -mode update`;
+- строит `summary`;
+- запускает smoke-тесты;
+- сохраняет артефакты.
+
+Actions сохраняет:
+- `training-logs` - лог обучения;
+- `runnable-model-bundle` - модель, препроцессор, registry и metadata;
+- `data-collector-state` - состояние потока и накопленный датасет;
+- `monitoring-dashboard` - summary и истории качества/обучения/drift.
+
+Для продолжения инкрементального обучения между запусками используется cache.
+инкрементальный подход: каждый запуск обрабатывает следующий батч данных, обновляет модель и сохраняет состояние для следующих запусков.
