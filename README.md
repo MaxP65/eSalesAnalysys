@@ -15,6 +15,12 @@ Target:
 - versioned model storage;
 - `update`, `inference`, `summary`.
 
+## Документация
+
+Подробное описание проекта и распределение баллов находятся в директории [`doc`](doc):
+- [`doc/task.md`](doc/task.md) - постановка задачи, данные, pipeline, модель и артефакты;
+- [`doc/grade.md`](doc/grade.md) - ожидаемые баллы по участникам.
+
 ## Запуск
 
 ```bash
